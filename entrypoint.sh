@@ -27,13 +27,13 @@ if [ "x${MAJOR_VERSION}" == 'x6' ]; then
   docker run \
     --rm \
     --env "node.name=es1" \
+    --env "action.auto_create_index=false" \
     --env "cluster.name=docker-elasticsearch" \
     --env "cluster.routing.allocation.disk.threshold_enabled=false" \
     --env "bootstrap.memory_lock=true" \
     --env "ES_JAVA_OPTS=-Xms1g -Xmx1g" \
     --env "xpack.security.enabled=false" \
     --env "xpack.license.self_generated.type=basic" \
-    --env "action.auto_create_index=false" \
     --ulimit nofile=65536:65536 \
     --ulimit memlock=-1:-1 \
     --publish "9200:9200" \
