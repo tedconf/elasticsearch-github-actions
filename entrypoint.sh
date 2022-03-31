@@ -27,6 +27,7 @@ if [ "x${MAJOR_VERSION}" == 'x6' ]; then
   docker run \
     --rm \
     --env "node.name=es1" \
+    --env "node.master=true" \
     --env "action.auto_create_index=false" \
     --env "cluster.name=docker-elasticsearch" \
     --env "cluster.routing.allocation.disk.threshold_enabled=false" \
