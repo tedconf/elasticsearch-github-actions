@@ -32,6 +32,7 @@ if [ "x${MAJOR_VERSION}" == 'x6' ]; then
     --env "cluster.routing.allocation.disk.threshold_enabled=false" \
     --env "bootstrap.memory_lock=true" \
     --env "ES_JAVA_OPTS=-Xms1g -Xmx1g" \
+    --env "discovery.type=single-node" \
     --env "xpack.security.enabled=false" \
     --env "xpack.license.self_generated.type=basic" \
     --ulimit nofile=65536:65536 \
