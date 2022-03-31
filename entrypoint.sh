@@ -33,6 +33,7 @@ if [ "x${MAJOR_VERSION}" == 'x6' ]; then
     --env "ES_JAVA_OPTS=-Xms1g -Xmx1g" \
     --env "xpack.security.enabled=false" \
     --env "xpack.license.self_generated.type=basic" \
+    --env "action.auto_create_index=false" \
     --ulimit nofile=65536:65536 \
     --ulimit memlock=-1:-1 \
     --publish "9200:9200" \
