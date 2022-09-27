@@ -1,6 +1,6 @@
 name: 'Run Elasticsearch with Plugins'
 description: 'Elasticsearch with Plugins'
-author: 'miyataka'
+author: 'miyataka - edited by ppagan-ted'
 
 branding:
   icon: 'database'
@@ -16,8 +16,14 @@ inputs:
     default: ''
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  env:
-    STACK_VERSION: ${{ inputs.stack-version }}
-    PLUGINS: ${{ inputs.plugins }}
+  using: "composite"
+  steps:
+    - name: Print host info
+      run: echo "The composite action ES is running from: " $HOSTNAME $(ifconfig)
+
+    - name: Create ES instance
+      using: 'docker'
+      image: 'Dockerfile'
+      env:
+        STACK_VERSION: ${{ inputs.stack-version }}
+        PLUGINS: ${{ inputs.plugins }}
