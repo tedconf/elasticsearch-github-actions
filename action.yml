@@ -19,8 +19,10 @@ runs:
   using: "composite"
   steps:
     - name: Create ES instance
-      using: 'docker'
-      image: 'Dockerfile'
-      env:
-        STACK_VERSION: ${{ inputs.stack-version }}
-        PLUGINS: ${{ inputs.plugins }}
+      shell: bash
+      run: echo 'hello world'
+#      using: 'docker'
+#      image: 'Dockerfile'
+#      env:
+#        STACK_VERSION: ${{ inputs.stack-version }}
+#        PLUGINS: ${{ inputs.plugins }}
