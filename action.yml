@@ -19,7 +19,8 @@ runs:
   using: "composite"
   steps:
     - name: Print host info
-      run: echo "The composite action ES is running from: " $HOSTNAME $(ifconfig)
+      run: |
+        echo 'The composite action ES is running from: ' $HOSTNAME $(ifconfig)
 
     - name: Create ES instance
       using: 'docker'
