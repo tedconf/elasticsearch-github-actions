@@ -18,11 +18,13 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Create ES instance
+    - name: Debug output
       shell: bash
-      run: echo 'hello world'
-#      using: 'docker'
-#      image: 'Dockerfile'
-#      env:
-#        STACK_VERSION: ${{ inputs.stack-version }}
-#        PLUGINS: ${{ inputs.plugins }}
+      run: echo running on $HOSTNAME
+
+    - name: Create ES instance
+      uses: 'docker'
+      image: 'Dockerfile'
+      env:
+        STACK_VERSION: ${{ inputs.stack-version }}
+        PLUGINS: ${{ inputs.plugins }}
