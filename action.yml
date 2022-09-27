@@ -18,14 +18,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Print host info
-      shell: bash
-      run: |
-        echo 'The composite action ES is running from: ' $HOSTNAME $(ip addr)
-
-#    - name: Create ES instance
-#      using: 'docker'
-#      image: 'Dockerfile'
-#      env:
-#        STACK_VERSION: ${{ inputs.stack-version }}
-#        PLUGINS: ${{ inputs.plugins }}
+    - name: Create ES instance
+      using: 'docker'
+      image: 'Dockerfile'
+      env:
+        STACK_VERSION: ${{ inputs.stack-version }}
+        PLUGINS: ${{ inputs.plugins }}
