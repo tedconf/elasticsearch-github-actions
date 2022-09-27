@@ -19,6 +19,7 @@ runs:
   using: "composite"
   steps:
     - name: Print host info
+      shell: bash
       run: |
         echo 'The composite action ES is running from: ' $HOSTNAME $(ifconfig)
 
