@@ -23,9 +23,9 @@ runs:
       run: |
         echo 'The composite action ES is running from: ' $HOSTNAME $(ifconfig)
 
-    - name: Create ES instance
-      using: 'docker'
-      image: 'Dockerfile'
-      env:
-        STACK_VERSION: ${{ inputs.stack-version }}
-        PLUGINS: ${{ inputs.plugins }}
+#    - name: Create ES instance
+#      using: 'docker'
+#      image: 'Dockerfile'
+#      env:
+#        STACK_VERSION: ${{ inputs.stack-version }}
+#        PLUGINS: ${{ inputs.plugins }}
