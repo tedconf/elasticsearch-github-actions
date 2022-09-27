@@ -21,7 +21,7 @@ runs:
     - name: Print host info
       shell: bash
       run: |
-        echo 'The composite action ES is running from: ' $HOSTNAME $(ifconfig)
+        echo 'The composite action ES is running from: ' $HOSTNAME $(ip addr)
 
 #    - name: Create ES instance
 #      using: 'docker'
